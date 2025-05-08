@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="mainpage.css" rel="stylesheet" type="text/css" />
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<style>
+		</style>
+	</head>
+  <body id="body">
+    <div class="container" style="display: block;">
+      <div class="content" >
+         <span id="pname">TECHYGAMEBAR</span>
+         <span id="invhead">INVENTORY</span>
+
+         <!--   <div class="glitch">
+              <img id="glitch" src="img/glitch.png" width="800px" height="800px" alt="">
+          </div> -->
+         <!-- <div class="slot"><img id="slot" src="img/default.png" draggable="true" /> <div class="info"> <span class="quantity">0</span><span class="wepname">PISTOL</span></div></div>  -->
+
+          <div class="slots">
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+         <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div> 
+       
+       
+       
+         <!-- <div class="slot"><img id="slot" src="img/default.png" draggable="true" /><span class="quantity">0</span><span class="wepname">PISTOL</span></div>  -->
+           
+         
+
+             
+        
+              
+          </div>
+      </div>
+      <div class="holster-container">
+          <div class="holster"><img id="holster" src="img/default.png"/><span class="holster-label">1</span><span class="hwepname"></span></div>
+          <div class="holster"><img id="holster" src="img/default.png"/><span class="holster-label">2</span><span class="hwepname"></span></div>
+          <div class="holster"><img id="holster" src="img/default.png"/><span class="holster-label">3</span><span class="hwepname"></span></div>
+          <div class="holster"><img id="holster" src="img/default.png"/><span class="holster-label">4</span><span class="hwepname"></span></div>
+          <div class="holster"><img id="holster" src="img/default.png"/><span class="holster-label">5</span><span class="hwepname"></span></div>
+      </div>
+      <!-- <div class="buttoncontainer">
+          <button class="button">USE</button>
+          <button class="button">DROP</button>
+      </div> -->
+  </div>
+
+  <div class="hotbar" style="display: none;">
+  <div class="holster-container">
+    <div class="holster"><img id="holster" src="img/default.png"/><span class="holster-label">1</span><span class="hwepname"></span></div>
+    <div class="holster"><img id="holster" src="img/default.png"/><span class="holster-label">2</span><span class="hwepname"></span></div>
+    <div class="holster"><img id="holster" src="img/default.png"/><span class="holster-label">3</span><span class="hwepname"></span></div>
+    <div class="holster"><img id="holster" src="img/default.png"/><span class="holster-label">4</span><span class="hwepname"></span></div>
+    <div class="holster"><img id="holster" src="img/default.png"/><span class="holster-label">5</span><span class="hwepname"></span></div>
+</div>
+</div>
+    <script type="text/javascript">
+
+function findEmptyHolster() {
+    return Array.from(document.querySelectorAll(".holster"))
+        .find(holster => holster.querySelector("img").src.includes('img/default.png'));
+}
+
+function handleDoubleClick(event) {
+    console.log("dww")
+    const target = event.target;
+    const isSlot = target.closest(".slot");
+    const isHolster = target.closest(".holster");
+
+    if (isSlot) {
+        const slot = isSlot;
+        const img = slot.querySelector("img").src;
+        const imgName = extractImageName(img);
+        const holster = findEmptyHolster();
+
+        if (holster) {
+            if (imgName!='default') { 
+            console.log(`Moving ${imgName} from slot to holster`);
+            slot.querySelector("img").src = 'img/default.png';
+            const wepname = slot.querySelector(".wepname");
+            const quantitySpan = slot.querySelector(".quantity");
+
+            wepname.innerText = '';
+            quantitySpan.innerText = '';
+            wepname.style.display = 'none';
+            quantitySpan.style.display = 'none';
+
+            holster.querySelector("img").src = img;
+            const holsterWepName = holster.querySelector(".hwepname");
+            holsterWepName.innerText =  extractwepname(imgName);
+            holsterWepName.style.display = 'block';
+
+
+            let inventory = {};
+            document.querySelectorAll(".slot img").forEach((img, index) => {
+                let slotKey = `slot${index + 1}`;
+                inventory[slotKey] = img.src.includes('default.png') ? "" : extractImageName(img.src);
+            });
+            document.querySelectorAll(".holster img").forEach((img, index) => {
+                let holsterKey = `holster${index + 1}`;
+                inventory[holsterKey] = img.src.includes('default.png') ? "" : extractImageName(img.src);
+            });
+            console.log(JSON.stringify(inventory));
+            fetch('https://tgb_inventory/saveinventory', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(inventory),
+    })
+        }
+    }
+    } else if (isHolster) {
+        const holster = isHolster;
+        const img = holster.querySelector("img").src;
+        const imgName = extractImageName(img);
+
+        const slot = Array.from(document.querySelectorAll(".slot"))
+            .find(slot => slot.querySelector("img").src.includes('img/default.png'));
+
+        if (slot) {
+            if (imgName!='default') { 
+            console.log(`Moving ${imgName} from holster to slot`);
+            holster.querySelector("img").src = 'img/default.png';
+            slot.querySelector("img").src = img;
+            const holsterWepName = holster.querySelector(".hwepname");
+            holsterWepName.innerText =  '';
+            holsterWepName.style.display = 'none';
+            const wepname = slot.querySelector(".wepname");
+            const quantitySpan = slot.querySelector(".quantity");
+
+            wepname.innerText = extractwepname(img);
+            quantitySpan.innerText = 1;
+            wepname.style.display = 'block';
+            quantitySpan.style.display = 'block';
+
+            let inventory = {};
+            document.querySelectorAll(".slot img").forEach((img, index) => {
+                let slotKey = `slot${index + 1}`;
+                inventory[slotKey] = img.src.includes('default.png') ? "" : extractImageName(img.src);
+            });
+            document.querySelectorAll(".holster img").forEach((img, index) => {
+                let holsterKey = `holster${index + 1}`;
+                inventory[holsterKey] = img.src.includes('default.png') ? "" : extractImageName(img.src);
+            });
+            console.log(JSON.stringify(inventory));
+            fetch('https://tgb_inventory/saveinventory', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(inventory),
+    })
+        }
+    }
+    }
+}
+// Add event listeners to slots and holsters
+document.querySelectorAll(".slot").forEach(slot => {
+    
+    slot.addEventListener("dblclick", handleDoubleClick);
+});
+
+document.querySelectorAll(".holster").forEach(holster => {
+    holster.addEventListener("dblclick", handleDoubleClick);
+});
+
+window.addEventListener('message', (event) => {
+    let data = event.data;
+    if (data.action) {
+        let slott = document.querySelectorAll(".slot");
+        let slots = document.querySelectorAll(".slot img");
+        let wepname = document.querySelectorAll(".slot .wepname");
+        let quantity = document.querySelectorAll(".slot .quantity");
+
+
+        let found = false;
+
+        for (let i = 0; i < slots.length; i++) {
+            if (slots[i].dataset.src === data.src) {
+                console.log(`Duplicate item ${data.action}`)
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            let duplicateFound = false;
+            for (let i = 0; i < slots.length; i++) {
+                if (slots[i].dataset.src === data.src) {
+                    duplicateFound = true;
+                    break;
+                }
+            }
+
+            if (!duplicateFound) {
+                for (let i = 0; i < slots.length; i++) {
+                    if (!slots[i].dataset.src) {
+                console.log(`Added item ${data.action}`)
+
+                        slots[i].dataset.src = data.src;
+                        slots[i].src = data.src;
+                        wepname[i].style.display = 'block';
+                        quantity[i].style.display = 'block';
+                        wepname[i].innerText = extractwepname(data.src)
+                        quantity[i].innerText = 1
+                        
+// slott.style.marginBottom = '-30px';
+                        break;
+                    }
+                    
+                }
+            
+            }
+    
+                    
+        }
+        let inventory = {};
+            document.querySelectorAll(".slot img").forEach((img, index) => {
+                let slotKey = `slot${index + 1}`;
+                inventory[slotKey] = img.src.includes('default.png') ? "" : extractImageName(img.src);
+            });
+            document.querySelectorAll(".holster img").forEach((img, index) => {
+                let holsterKey = `holster${index + 1}`;
+                inventory[holsterKey] = img.src.includes('default.png') ? "" : extractImageName(img.src);
+            });
+            console.log(JSON.stringify(inventory));
+             fetch('https://tgb_inventory/saveinventory', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(inventory),
+    })
+    
+  
+    }
+});
+function saveInventory() {
+    // Collect inventory data
+    let inventory = {};
+
+    // Slots
+    document.querySelectorAll(".slot img").forEach((img, index) => {
+        let slotKey = `slot${index + 1}`;
+        inventory[slotKey] = img.dataset.src ? extractImageName(img.dataset.src) : "";
+    });
+
+    // Holsters
+    document.querySelectorAll(".holster img").forEach((img, index) => {
+        let holsterKey = `holster${index + 1}`;
+        inventory[holsterKey] = img.dataset.src ? extractImageName(img.dataset.src) : "";
+    });
+console.log(inventory)
+
+console.log(JSON.stringify(inventory))
+    // Send inventory data to the backend
+    // fetch('https://tgb_inventory/saveinventory', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(inventory),
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //     console.log('Inventory saved:', data);
+    // })
+    // .catch((error) => {
+    //     console.error('Error:', error);
+    // });
+}
+function extractImageName(src) {
+    const parts = src.split('/');
+    const filename = parts[parts.length - 1];
+    return filename.split('.')[0];
+}
+function extractwepname(src) {
+    const parts = src.split('/');
+    const filename = parts[parts.length - 1];
+    const nameWithoutExtension = filename.split('.')[0];
+    return nameWithoutExtension.replace('WEAPON_', '');
+}
+      // $(function() {
+      //   /* open the UI for user */
+      //   window.addEventListener('message', function(event) {
+      //     if (event.data.type == "show"){
+      //     document.querySelector(".container").display='flex';
+      //       // $('.container').css('visibility', 'visible')
+      //     } else if (event.data.type == "hide"){
+      //     document.querySelector(".container").display='none';
+
+      //       // $('.container').css('visibility', 'hidden')
+      //     }
+          
+      //   });
+      // });
+      
+      window.addEventListener('message', function(event) {
+            var data = event.data;
+
+      if (data.type === 'show') {
+            var name = data.name 
+            var inventorydata = data.inventorydata 
+        const inventory = JSON.parse(inventorydata);
+      
+
+        var container = document.querySelector('.container');
+        container.style.display = 'block';
+        document.getElementById('pname').innerText = `${name}`
+         
+      
+        document.querySelectorAll(".slot img").forEach((img, index) => {
+        let slotKey = `slot${index + 1}`;
+
+            if (inventory[slotKey]) {
+                img.src = `img/${inventory[slotKey]}.png`;
+                img.dataset.src = `img/${inventory[slotKey]}.png`;
+            } else {
+                img.src = 'img/default.png';
+                img.dataset.src = '';
+            }
+        const wepName = extractImageName(inventory[slotKey] || '');
+        const wepNameElement = img.closest('.slot').querySelector('.wepname');
+        wepNameElement.style.display = 'block';
+        wepNameElement.textContent = extractwepname(wepName);
+    //     let slott = document.querySelector(".slot");
+
+    // slott.style.marginBottom = '-30px';
+        const slots = document.querySelectorAll(".slot");
+    slots.forEach(slot => {
+        const img = slot.querySelector("img");
+        const quantitySpan = slot.querySelector(".quantity");
+        if (!img.src.includes('img/default.png')) {
+            quantitySpan.style.display = 'block';
+            quantitySpan.innerText = '1';
+        } else {
+            quantitySpan.style.display = 'none';
+            quantitySpan.innerText = '';
+        }
+    });
+    });
+
+        // Update the holsters
+        document.querySelectorAll(".holster img").forEach((img, index) => {
+            let holsterKey = `holster${index + 1}`;
+            if (inventory[holsterKey]) {
+                img.src = `img/${inventory[holsterKey]}.png`;
+                img.dataset.src = `img/${inventory[holsterKey]}.png`;
+          
+            } else {
+                img.src = 'img/default.png';
+                img.dataset.src = '';
+            }
+            // Update the weapon name
+            const wepName = inventory[holsterKey];
+            const wepNameElement = img.closest('.holster').querySelector('.hwepname');
+             wepNameElement.style.display = 'block';
+            wepNameElement.textContent = extractwepname(wepName);
+    
+        });
+    }
+        if (data.type === 'holster') {
+console.log('holster')
+key = data.key
+equipWeapon(key);
+
+}
+
+
+
+
+//     if (data.type === 'showhotbar') {
+// console.log('showhotbar')
+// var container = document.querySelector('.holster-container');
+//     container.style.display = 'block';
+//     setTimeout(() => {
+//         container.style.display = 'none';
+//     }, 3000); // 3000 milliseconds = 3 seconds
+// }
+});
+
+
+
+// document.addEventListener('DOMContentLoaded', (event) => {
+    document.onkeyup = function(data) {
+        if (data.which == 27) {
+            var container = document.querySelector('.container');
+            container.style.display = 'none';
+            $.post('http://tgb_inventory/hide', JSON.stringify({}));
+        }
+
+        // if (data.which >= 49 && data.which <= 53) { // Keys 1 to 5
+        //     let holsterIndex = data.which - 48; // Convert key to holster index (1 to 5)
+        //     equipWeapon(holsterIndex);
+        // }
+       
+
+    };
+    function equipWeapon(index) {
+    let holster = document.querySelector(`.holster:nth-child(${index}) img`);
+    if (holster && holster.src && !holster.src.includes('default.png')) {
+        let weaponName = extractImageName(holster.src);
+
+        if (weaponName === 'ARMOUR' || weaponName === 'METH' || weaponName === 'OXY') {
+            console.log(`Using item: ${weaponName} from holster ${index}`);
+
+            fetch('https://tgb_inventory/useitem', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(weaponName),
+            });
+        } else {
+            console.log(`Equipping weapon: ${weaponName} from holster ${index}`);
+
+            fetch('https://tgb_inventory/equipweapon', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(weaponName),
+            });
+        }
+    }
+}
+
+    // function equipWeapon(index) {
+    //     let holster = document.querySelector(`.holster:nth-child(${index}) img`);
+    //     if (holster && holster.src && !holster.src.includes('default.png')) {
+    //         let weaponName = extractImageName(holster.src);
+
+    //         console.log(`Equipping weapon: ${weaponName} from holster ${index}`);
+    //         // $.post('http://tgb_inventory/equipweapon', JSON.stringify($weaponName));
+    //         fetch('https://tgb_inventory/equipweapon', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(weaponName),
+    // })
+    //         // Add your code here to actually equip the weapon in your game
+    //     }
+    // }
+
+    //   document.addEventListener('DOMContentLoaded', () => {
+    // Function to equip a weapon
+    // function equipWeapon(holsterNumber) {
+    //     const holster = document.querySelector(`.holster:nth-child(${holsterNumber}) img`);
+    //     const weapon = holster ? holster.dataset.src : '';
+
+    //     if (weapon && !weapon.includes('default.png')) {
+    //         console.log(`Equipping weapon: ${weapon}`);
+    //         // Trigger a custom event or call a function to equip the weapon in the game
+    //         // TriggerServerEvent('equipWeapon', weapon); // Example server event
+    //     } else {
+    //         console.log(`No weapon in holster${holsterNumber}`);
+    //     }
+    // }
+
+//     // Add event listener for keydown
+//     window.addEventListener('keydown', (event) => {
+//         switch (event.key) {
+//             case '1':
+//                 equipWeapon(1);
+//                 break;
+//             case '2':
+//                 equipWeapon(2);
+//                 break;
+//             case '3':
+//                 equipWeapon(3);
+//                 break;
+//             case '4':
+//                 equipWeapon(4);
+//                 break;
+//             case '5':
+//                 equipWeapon(5);
+//                 break;
+//             default:
+//                 break;
+//         }
+//     });
+// });
+
+
+//       function equipWeapon(holsterNumber) {
+//     const holster = document.querySelector(`.holster:nth-child(${holsterNumber}) img`);
+//     const weapon =  holster.dataset.src 
+
+//     if (weapon) {
+//         console.log(`Equipping weapon: ${weapon}`);
+//         // Here, you can add the logic to equip the weapon, for example:
+//         // Trigger a custom event or call a function to equip the weapon in the game
+//         // e.g., TriggerServerEvent('equipWeapon', weapon);
+//     } else {
+//         console.log(`No weapon in holster${holsterNumber}`);
+//     }
+// }
+
+// // Add event listener for keydown
+
+// window.addEventListener('keydown', (event) => {
+//     switch (event.key) {
+//         case '1':
+//             equipWeapon(1);
+//             break;
+//         case '2':
+//             equipWeapon(2);
+//             break;
+//         case '3':
+//             equipWeapon(3);
+//             break;
+//         case '4':
+//             equipWeapon(4);
+//             break;
+//         case '5':
+//             equipWeapon(5);
+//             break;
+//         default:
+//             break;
+//     }
+// });
+
+//     document.onkeyup = function(data){
+//         switch (data.which) {
+//         case '1':
+//             equipWeapon(1);
+//             break;
+//         case '2':
+//             equipWeapon(2);
+//             break;
+//         case '3':
+//             equipWeapon(3);
+//             break;
+//         case '4':
+//             equipWeapon(4);
+//             break;
+//         case '5':
+//             equipWeapon(5);
+//             break;
+//         default:
+//             break;
+//     }
+// }
+    </script>
+  </body>
+</html>
+

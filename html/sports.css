@@ -1,0 +1,137 @@
+body {
+    /*background-color: transparent;*/
+    margin:0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    /*opacity: 0.0;*/
+    overflow: auto;
+	display: inline;
+}
+.container {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    width: 1900px;
+    height: 1000px;
+    /* border-radius: 20px; */
+    background-color: #1e1e1ebd;
+    /* border: 2px solid #c4c4c4; */
+}
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+/* .overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-size: 90px;
+    border-radius: 20px;
+    opacity: 0.25;
+    filter: contrast(25%);
+} */
+.slot {
+    background-color: #ffffff;
+    margin: auto;
+    border-radius: 10px;
+}
+
+#title {
+    position: relative;
+    text-align: center;
+    color: white;
+    top: 10px;
+    left: 726px;
+    font-size: 30px;
+    font-family: 'Lato', monospace;
+    font-weight: bolder;
+}
+#car1 {
+    width: 200px;
+    height: 200px;
+}
+#car2 {
+    width: 200px;
+    height: 200px;
+
+}
+#car3 {
+    width: 200px;
+    height: 200px;
+    
+}
+#car4 {
+    width: 200px;
+    height: 200px;
+
+}
+#car5 {
+    top: 100px;
+
+    width: 200px;
+    height: 200px;
+
+}
+#car6 {
+    top: 100px;
+
+    width: 200px;
+    height: 200px;
+
+}
+#car7 {
+    top: 100px;
+
+    width: 200px;
+    height: 200px;
+
+} 
+#car8 {
+    top: 100px;
+    width: 200px;
+    height: 200px;
+
+}
+#car9 {
+    width: 200px;
+    height: 200px;
+
+}
+#car10 {
+    width: 200px;
+    height: 200px;
+
+}
+.button {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 50px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 150px;
+    height: 70px;
+  }
+  
+  .button {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  
+  .button:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+ 
