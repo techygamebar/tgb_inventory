@@ -56,23 +56,33 @@ body {
   
 }
 
-#holster {
+/* #holster {
     width: 200px;
     height: 120px;
-    border: 1px solid white;
-    border-radius: 5px;
+
     object-fit: contain;
-}
+} */
 
 .holster-container {
     display: flex;
     justify-content: center;
     padding: 20px;
+ 
 }
 
 .holster {
     margin: 0 10px;
+    height: 120px;
     text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.holster img{
+    width: 180px;
+    height: 120px;
+    object-fit: contain;
+    justify-content: center;
+
 }
 /* .quantity{
     position: relative;
