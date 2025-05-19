@@ -38,7 +38,7 @@
 
 
 RegisterCommand("additem", function (source,args,raw)
-	local identifier = GetPlayerIdentifier(source)
+local identifier = GetPlayerIdentifiers(source)[1]
    print(args[1])
 	TriggerClientEvent("inventory:additem",source , args[1])
 
@@ -132,7 +132,7 @@ AddEventHandler('getinventory', function()
                 local cs = json.encode(inventoryData)
                 -- Decode the JSON string into a Lua table
                 local cs2 = json.decode(cs)
-                print(inventoryData)
+                -- print(inventoryData)
              
                
                 -- Decode the nested JSON string inside the 'crosshair' property
@@ -143,7 +143,7 @@ AddEventHandler('getinventory', function()
 
 
                else
-                print("No inventory found for this player")
+                -- print("No inventory found for this player")
             end
         end)
     end

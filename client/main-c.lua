@@ -15,15 +15,18 @@ Citizen.CreateThread(function()
 		SetPedConfigFlag(PlayerPedId(), 48, true)
 	if not IsPauseMenuActive() then
 		if IsControlJustPressed(1, 311) then
-			-- open()
-			TriggerServerEvent("getinventory")
+    TriggerServerEvent("getinventory")
+            
 		end
 	end
 	end
 end)
 
 
-
+-- AddEventHandler('playerSpawned', function()
+--     TriggerServerEvent("getinventory")
+  
+--  end)
 
 -- Citizen.CreateThread(function()
 --     while true do
@@ -132,28 +135,83 @@ end)
 -- FUNCTIONS
 ------------
 
+-- function toggleWeapon(holsterKey)
+--     -- if currentWeapon then
+--     --     unequipWeapon()
+--     -- else
+--         SendNUIMessage({type = "holster", key = holsterKey})
+--     -- end
+-- end
+
+-- function unequipWeapon()
+--     SetCurrentPedWeapon(GetPlayerPed(-1), GetHashKey("WEAPON_UNARMED"), true)
+--     currentWeapon = nil
+-- end
+-- function equipWeapon(weaponname)
+--     local playerPed = GetPlayerPed(-1)
+--     print(weaponname)
+
+--     if HasPedGotWeapon(playerPed, GetHashKey(weaponname), false) then
+--         SetCurrentPedWeapon(playerPed, GetHashKey(weaponname), true)
+--         currentWeapon = weaponname
+--     end
+-- end
 function toggleWeapon(holsterKey)
-    -- if currentWeapon then
-    --     unequipWeapon()
-    -- else
-        SendNUIMessage({type = "holster", key = holsterKey})
-    -- end
+    SendNUIMessage({type = "holster", key = holsterKey})
 end
 
 function unequipWeapon()
-    SetCurrentPedWeapon(GetPlayerPed(-1), GetHashKey("WEAPON_UNARMED"), true)
+    SetCurrentPedWeapon(PlayerPedId(), GetHashKey("WEAPON_UNARMED"), true)
     currentWeapon = nil
+    print("Weapon unequipped")
 end
-function equipWeapon(weaponname)
-    local playerPed = GetPlayerPed(-1)
-    print(weaponname)
 
-    if HasPedGotWeapon(playerPed, GetHashKey(weaponname), false) then
-        SetCurrentPedWeapon(playerPed, GetHashKey(weaponname), true)
-        currentWeapon = weaponname
+function equipWeapon(weaponName)
+    local ped = PlayerPedId()
+    local weaponHash = GetHashKey(weaponName)
+
+    if currentWeapon == weaponName then
+        unequipWeapon()
+        return
+    end
+
+    if HasPedGotWeapon(ped, weaponHash, false) and not isEquipping then
+        isEquipping = true
+
+        -- Load animation
+        local animDict = "rcmjosh4"
+        local animName = "josh_leadout_cop2"
+        RequestAnimDict(animDict)
+        while not HasAnimDictLoaded(animDict) do
+            Citizen.Wait(10)
+        end
+
+        -- Play draw animation
+        TaskPlayAnim(ped, animDict, animName, 8.0, -8.0, 1000, 48, 0, false, false, false)
+
+        -- Block controls while animation plays
+        local startTime = GetGameTimer()
+        local blockDuration = 1000 -- milliseconds
+        Citizen.CreateThread(function()
+            while GetGameTimer() - startTime < blockDuration do
+                DisablePlayerFiring(ped, true) -- prevents shooting
+                DisableControlAction(0, 24, true) -- disable attack
+                DisableControlAction(0, 25, true) -- disable aim
+                Citizen.Wait(0)
+            end
+        end)
+
+        -- Wait before giving weapon
+        Citizen.Wait(blockDuration)
+
+        GiveWeaponToPed(ped, weaponHash, 250, false, true)
+        SetCurrentPedWeapon(ped, weaponHash, true)
+        currentWeapon = weaponName
+        ClearPedTasks(ped)
+
+        isEquipping = false
     end
 end
-
 local isUsingItem = false
 
 function useitem(weaponname)
