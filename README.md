@@ -31,7 +31,7 @@
      
 
 📜 License
-This project is licensed under the  GNU GPL v3.0 License  — feel free to use, modify and contribute. 
+- This project is licensed under the  GNU GPL v3.0 License  — feel free to use, modify and contribute. 
 
 🙌 Credits
 - Developed by @techygamebar (https://github.com/techygamebar)
