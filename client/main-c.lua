@@ -52,15 +52,15 @@ AddEventHandler("openinventory",  function(name,inventoryData)
 end)
 RegisterNetEvent("addweplocally")
 AddEventHandler("addweplocally", function(invdata)
-    local playerPed = GetPlayerPed(-1)
-
-    for slot, weapon in pairs(invdata) do
-        if weapon ~= "" then
-            GiveWeaponToPed(playerPed, GetHashKey(weapon), 10000, false, true)
-        else
+    local playerPed = PlayerPedId()
+        for slot, weapon in pairs(invdata) do
+        if weapon and weapon ~= "" then
+            GiveWeaponToPed(playerPed, GetHashKey(weapon), 10000, false, false)
         end
     end
+
 end)
+
 -- function hotbar()
 -- 	SetNuiFocus(false, false)
 -- 	SendNUIMessage({
