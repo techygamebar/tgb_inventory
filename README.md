@@ -35,10 +35,10 @@
 - This project is licensed under the  GNU GPL v3.0 License  — feel free to use, modify and contribute. 
 
 :test_tube: Work In Progress(WIP)
-This is a work-in-progress inventory system made using HTML/CSS for the UI and Lua for the logic.
+- This is a work-in-progress inventory system made using HTML/CSS for the UI and Lua for the logic.
 I’m sharing this early to get feedback, ideas, and potential contributors. It’s fully functional and modular, and I’m actively improving it.
 
-While many people prefer React, I chose HTML/CSS for performance and simplicity — especially for server owners looking for easy edits.
+- While many people prefer React, I chose HTML/CSS for performance and simplicity — especially for server owners looking for easy edits.
 Open to ideas, improvements, and even collabs!
 
 🙌 Credits
