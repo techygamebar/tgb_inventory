@@ -135,27 +135,6 @@ end)
 -- FUNCTIONS
 ------------
 
--- function toggleWeapon(holsterKey)
---     -- if currentWeapon then
---     --     unequipWeapon()
---     -- else
---         SendNUIMessage({type = "holster", key = holsterKey})
---     -- end
--- end
-
--- function unequipWeapon()
---     SetCurrentPedWeapon(GetPlayerPed(-1), GetHashKey("WEAPON_UNARMED"), true)
---     currentWeapon = nil
--- end
--- function equipWeapon(weaponname)
---     local playerPed = GetPlayerPed(-1)
---     print(weaponname)
-
---     if HasPedGotWeapon(playerPed, GetHashKey(weaponname), false) then
---         SetCurrentPedWeapon(playerPed, GetHashKey(weaponname), true)
---         currentWeapon = weaponname
---     end
--- end
 function toggleWeapon(holsterKey)
     SendNUIMessage({type = "holster", key = holsterKey})
 end
@@ -177,8 +156,6 @@ function equipWeapon(weaponName)
 
     if HasPedGotWeapon(ped, weaponHash, false) and not isEquipping then
         isEquipping = true
-
-        -- Load animation
         local animDict = "rcmjosh4"
         local animName = "josh_leadout_cop2"
         RequestAnimDict(animDict)
@@ -186,22 +163,18 @@ function equipWeapon(weaponName)
             Citizen.Wait(10)
         end
 
-        -- Play draw animation
         TaskPlayAnim(ped, animDict, animName, 8.0, -8.0, 1000, 48, 0, false, false, false)
-
-        -- Block controls while animation plays
         local startTime = GetGameTimer()
-        local blockDuration = 1000 -- milliseconds
+        local blockDuration = 1000 
         Citizen.CreateThread(function()
             while GetGameTimer() - startTime < blockDuration do
-                DisablePlayerFiring(ped, true) -- prevents shooting
-                DisableControlAction(0, 24, true) -- disable attack
-                DisableControlAction(0, 25, true) -- disable aim
+                DisablePlayerFiring(ped, true) --  shooting
+                DisableControlAction(0, 24, true) --  attack
+                DisableControlAction(0, 25, true) --  aim
                 Citizen.Wait(0)
             end
         end)
 
-        -- Wait before giving weapon
         Citizen.Wait(blockDuration)
 
         GiveWeaponToPed(ped, weaponHash, 250, false, true)
@@ -232,8 +205,8 @@ function useitem(weaponname)
 
         isUsingItem = true
         -- Play armour animation
-        local animDict = "move_m@intimidation@cop@unarmed" -- Example animation dictionary
-        local animName = "idle" -- Example animation name
+        local animDict = "move_m@intimidation@cop@unarmed"
+        local animName = "idle" 
 
         RequestAnimDict(animDict)
         while not HasAnimDictLoaded(animDict) do
@@ -241,23 +214,19 @@ function useitem(weaponname)
         end
 
         TaskPlayAnim(playerPed, animDict, animName, 8.0, -8.0, 2000, 49, 0, false, false, false)
-        Citizen.Wait(2000) -- Wait for the animation duration
-
-        -- Add armour to the player
-        AddArmourToPed(playerPed, 50) -- Adds 50 armour (adjust as needed)
+        Citizen.Wait(2000) 
+        AddArmourToPed(playerPed, 50) 
         print("Armour applied.")
 
-        -- Clear the animation task
         ClearPedTasks(playerPed)
         isUsingItem = false
     elseif weaponname == "METH" then
         isUsingItem = true
 
-        -- Meth usage logic
-        SetRunSprintMultiplierForPlayer(PlayerId(), 1.2) -- Temporarily increase sprint speed
+        SetRunSprintMultiplierForPlayer(PlayerId(), 1.2) 
         print("Meth effect applied.")
-        Citizen.Wait(10000) -- Effect lasts 10 seconds
-        SetRunSprintMultiplierForPlayer(PlayerId(), 1.0) -- Reset sprint speed
+        Citizen.Wait(10000) 
+        SetRunSprintMultiplierForPlayer(PlayerId(), 1.0) 
         print("Meth effect ended.")
 
         isUsingItem = false
@@ -269,8 +238,7 @@ function useitem(weaponname)
 
         isUsingItem = true
 
-        -- Oxy usage logic
-        SetEntityHealth(playerPed, GetEntityHealth(playerPed) + 25) -- Heal the player by 25 HP
+        SetEntityHealth(playerPed, GetEntityHealth(playerPed) + 25) -- + 25 HP
         print("Oxy used for healing.")
 
         isUsingItem = false
@@ -287,41 +255,7 @@ function DisplayHelpText(str)
 end
 
 
--- RegisterNetEvent("arena:southside")
--- AddEventHandler("arena:southside", function(value)
---     CreateThread(function()
---         while true do
---             Wait(1000)
---             southside = 0
---             for _, playerId in ipairs(GetPlayers()) do
---                 if GetPlayerRoutingBucket(playerId) == 0 then
---                     southside = southside + 1
---                 end
---                 southside = southside
---                 SendNUIMessage(({
---                     type = "value",
---                     count = southside,
---                     display = true
---                 }))
---             end
---         end 
---     end)
--- end)
 
-
-
-
--- RegisterNetEvent("addwep")
--- AddEventHandler("addwep",  function(wep,ammoCount)
-	
--- 	local hash = GetHashKey(wep)
--- -- print(hash)
--- -- print(wep)
--- -- print(ammoCount)
-
--- 	GiveWeaponToPed(GetPlayerPed(-1), hash, ammoCount, false, true)
-
--- end)
 local weapons = {
 	"WEAPON_ADVANCEDRIFLE",
 	"WEAPON_APPISTOL",
@@ -381,33 +315,12 @@ if Isaitem(item) then
 		
 	local hash = item
 
-	-- GiveWeaponToPed(GetPlayerPed(-1), hash, 10000, false, true)
 	SendNUIMessage({
 		src = "img/"..item..".png",
 		action = item
 	})
 end
--- 	if item == "WEAPON_APPISTOL" then
--- 	local hash = GetHashKey(item)
 
--- 	GiveWeaponToPed(GetPlayerPed(-1), hash, 10000, false, true)
--- 	SendNUIMessage({
--- 		src = "img/WEAPON_APPISTOL.png",
--- 		action = item
--- 	})
-	
--- elseif  item == "WEAPON_PISTOL" then
--- 	local hash = GetHashKey(item)
-
--- 	GiveWeaponToPed(GetPlayerPed(-1), hash, 10000, false, true)
-	
--- 	SendNUIMessage({
--- 		src = "img/WEAPON_PISTOL.png",
--- 		action = item
--- 	})
-
-
-	-- end
 end)
 
 

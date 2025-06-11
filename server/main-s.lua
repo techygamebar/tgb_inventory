@@ -1,44 +1,8 @@
--- RegisterCommand("addwep",function (source, args)
---     local source  = source
--- local identifier = GetPlayerIdentifier(source)
--- 	local wep = tostring(args[1])
--- 	local ammoCount = tonumber(args[2])
--- TriggerClientEvent("addwep",source, wep,ammoCount)
--- print(wep)
--- print(ammoCount)
-
--- local items = "{ 1:" ..wep..  "},{ 2:"  
--- MySQL.Async.execute('UPDATE players SET items = @items  WHERE identifier = @identifier', {
--- 	['@identifier'] = GetPlayerIdentifier(source),
--- 	['@items'] = items
--- })
--- end)
-
-
--- local source  = source
--- local identifier = GetPlayerIdentifier(source)
--- MySQL.Async.fetchScalar('SELECT 1 FROM lobby WHERE identifier = @identifier', {
--- 	['identifier'] = identifier
--- }, function(hasVoted)
--- 	if not hasVoted then
--- 		MySQL.Async.execute('INSERT INTO lobby (identifier, lobby) VALUES (@identifier, @lobby)', {
--- 			['identifier'] = identifier,
--- 			['lobby'] = lobby
--- 		})
--- 	else
--- MySQL.Async.execute('UPDATE lobby SET lobby = @lobby  WHERE identifier = @identifier', {
--- 	['@identifier'] = GetPlayerIdentifier(source),
--- 	['@lobby'] = lobby
--- })
-
--- {"4":{"count":6,"name":"hake"},"3":{"count":2,"name":"fishingrod"},"6":{"count":1,"name":"WEAPON_NIGHTSTICK"},"5":{"count":2,"name":"pike"},"8":{"count":8,"name":"scad"},"7":{"count":2,"name":"disc_ammo_rifle_large"},"2":{"count":2,"name":"WEAPON_CARBINERIFLE"},"1":{"count":94,"name":"bucket"}}
-
 
 
 
 
 RegisterCommand("additem", function(source, args, raw)
-    -- Ensure proper arguments are given
     if not args[1] or not args[2] then
         TriggerClientEvent("chat:addMessage", source, {
             args = {"^1SYSTEM", "Usage: /additem [playerID] [itemName]"}
@@ -52,7 +16,6 @@ RegisterCommand("additem", function(source, args, raw)
     if targetId and GetPlayerIdentifiers(targetId)[1] then
         TriggerClientEvent("inventory:additem", targetId, itemName)
 
-        -- Feedback to command issuer
         TriggerClientEvent("chat:addMessage", source, {
             args = {"^2SYSTEM", "Item '" .. itemName .. "' given to player ID " .. targetId}
         })
@@ -158,12 +121,10 @@ AddEventHandler('getinventory', function()
             if result[1] then
                 local inventoryData = result[1].inventory
                 local cs = json.encode(inventoryData)
-                -- Decode the JSON string into a Lua table
                 local cs2 = json.decode(cs)
                 -- print(inventoryData)
              
                
-                -- Decode the nested JSON string inside the 'crosshair' property
                 -- local showCrosshair = crosshairObject.showCrosshair
                 TriggerClientEvent('openinventory', source, name, cs2)
              TriggerClientEvent('addweplocally', source,json.decode(inventoryData))

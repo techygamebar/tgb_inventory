@@ -1,9 +1,7 @@
 body {
-    /*background-color: transparent;*/
     margin:0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    /*opacity: 0.0;*/
     overflow: hidden;
 }
 .container {
@@ -16,7 +14,7 @@ body {
   background:  rgba(20, 20, 20, 0.7);
     /* background-color: #14141480;
     background-image: linear-gradient(to right, #071330bd, #15337ebd, #071330bd); */
-    overflow:hidden; /* Enable vertical scrollbar */
+    overflow:hidden; 
 }
 
 .content {
@@ -56,12 +54,6 @@ body {
   
 }
 
-/* #holster {
-    width: 200px;
-    height: 120px;
-
-    object-fit: contain;
-} */
 
 .holster-container {
     display: flex;
@@ -84,24 +76,7 @@ body {
     justify-content: center;
 
 }
-/* .quantity{
-    position: relative;
-    color: white;
-    top: -27px;
-    left: 90px;
-    border-radius: 5px;
-    /* font-size: 1px; */
-    /* display: none; */
-/* }  */
-/* .wepname{ */
-    /* position: relative; */
-    /* color: white; */
-    /* top: -45px; */
-    /* left: 0px; */
-    /* border-radius: 5px; */
-    /* font-size: 1px; */
-    /* display: none; */
-/* } */
+
 .wepname{
     position: relative;
     color: white;

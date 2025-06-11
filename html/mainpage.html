@@ -271,16 +271,13 @@ window.addEventListener('message', (event) => {
     }
 });
 function saveInventory() {
-    // Collect inventory data
     let inventory = {};
 
-    // Slots
     document.querySelectorAll(".slot img").forEach((img, index) => {
         let slotKey = `slot${index + 1}`;
         inventory[slotKey] = img.dataset.src ? extractImageName(img.dataset.src) : "";
     });
 
-    // Holsters
     document.querySelectorAll(".holster img").forEach((img, index) => {
         let holsterKey = `holster${index + 1}`;
         inventory[holsterKey] = img.dataset.src ? extractImageName(img.dataset.src) : "";
@@ -288,21 +285,7 @@ function saveInventory() {
 console.log(inventory)
 
 console.log(JSON.stringify(inventory))
-    // Send inventory data to the backend
-    // fetch('https://tgb_inventory/saveinventory', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(inventory),
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //     console.log('Inventory saved:', data);
-    // })
-    // .catch((error) => {
-    //     console.error('Error:', error);
-    // });
+
 }
 function extractImageName(src) {
     const parts = src.split('/');
@@ -315,20 +298,7 @@ function extractwepname(src) {
     const nameWithoutExtension = filename.split('.')[0];
     return nameWithoutExtension.replace('WEAPON_', '');
 }
-      // $(function() {
-      //   /* open the UI for user */
-      //   window.addEventListener('message', function(event) {
-      //     if (event.data.type == "show"){
-      //     document.querySelector(".container").display='flex';
-      //       // $('.container').css('visibility', 'visible')
-      //     } else if (event.data.type == "hide"){
-      //     document.querySelector(".container").display='none';
-
-      //       // $('.container').css('visibility', 'hidden')
-      //     }
-          
-      //   });
-      // });
+  
       
       window.addEventListener('message', function(event) {
             var data = event.data;
@@ -375,7 +345,6 @@ function extractwepname(src) {
     });
     });
 
-        // Update the holsters
         document.querySelectorAll(".holster img").forEach((img, index) => {
             let holsterKey = `holster${index + 1}`;
             if (inventory[holsterKey]) {
@@ -386,7 +355,6 @@ function extractwepname(src) {
                 img.src = 'img/default.png';
                 img.dataset.src = '';
             }
-            // Update the weapon name
             const wepName = inventory[holsterKey];
             const wepNameElement = img.closest('.holster').querySelector('.hwepname');
              wepNameElement.style.display = 'block';
@@ -416,7 +384,6 @@ equipWeapon(key);
 
 
 
-// document.addEventListener('DOMContentLoaded', (event) => {
     document.onkeyup = function(data) {
         if (data.which == 27) {
             var container = document.querySelector('.container');
@@ -424,10 +391,6 @@ equipWeapon(key);
             $.post('http://tgb_inventory/hide', JSON.stringify({}));
         }
 
-        // if (data.which >= 49 && data.which <= 53) { // Keys 1 to 5
-        //     let holsterIndex = data.which - 48; // Convert key to holster index (1 to 5)
-        //     equipWeapon(holsterIndex);
-        // }
        
 
     };
@@ -460,123 +423,7 @@ equipWeapon(key);
     }
 }
 
-    // function equipWeapon(index) {
-    //     let holster = document.querySelector(`.holster:nth-child(${index}) img`);
-    //     if (holster && holster.src && !holster.src.includes('default.png')) {
-    //         let weaponName = extractImageName(holster.src);
 
-    //         console.log(`Equipping weapon: ${weaponName} from holster ${index}`);
-    //         // $.post('http://tgb_inventory/equipweapon', JSON.stringify($weaponName));
-    //         fetch('https://tgb_inventory/equipweapon', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(weaponName),
-    // })
-    //         // Add your code here to actually equip the weapon in your game
-    //     }
-    // }
-
-    //   document.addEventListener('DOMContentLoaded', () => {
-    // Function to equip a weapon
-    // function equipWeapon(holsterNumber) {
-    //     const holster = document.querySelector(`.holster:nth-child(${holsterNumber}) img`);
-    //     const weapon = holster ? holster.dataset.src : '';
-
-    //     if (weapon && !weapon.includes('default.png')) {
-    //         console.log(`Equipping weapon: ${weapon}`);
-    //         // Trigger a custom event or call a function to equip the weapon in the game
-    //         // TriggerServerEvent('equipWeapon', weapon); // Example server event
-    //     } else {
-    //         console.log(`No weapon in holster${holsterNumber}`);
-    //     }
-    // }
-
-//     // Add event listener for keydown
-//     window.addEventListener('keydown', (event) => {
-//         switch (event.key) {
-//             case '1':
-//                 equipWeapon(1);
-//                 break;
-//             case '2':
-//                 equipWeapon(2);
-//                 break;
-//             case '3':
-//                 equipWeapon(3);
-//                 break;
-//             case '4':
-//                 equipWeapon(4);
-//                 break;
-//             case '5':
-//                 equipWeapon(5);
-//                 break;
-//             default:
-//                 break;
-//         }
-//     });
-// });
-
-
-//       function equipWeapon(holsterNumber) {
-//     const holster = document.querySelector(`.holster:nth-child(${holsterNumber}) img`);
-//     const weapon =  holster.dataset.src 
-
-//     if (weapon) {
-//         console.log(`Equipping weapon: ${weapon}`);
-//         // Here, you can add the logic to equip the weapon, for example:
-//         // Trigger a custom event or call a function to equip the weapon in the game
-//         // e.g., TriggerServerEvent('equipWeapon', weapon);
-//     } else {
-//         console.log(`No weapon in holster${holsterNumber}`);
-//     }
-// }
-
-// // Add event listener for keydown
-
-// window.addEventListener('keydown', (event) => {
-//     switch (event.key) {
-//         case '1':
-//             equipWeapon(1);
-//             break;
-//         case '2':
-//             equipWeapon(2);
-//             break;
-//         case '3':
-//             equipWeapon(3);
-//             break;
-//         case '4':
-//             equipWeapon(4);
-//             break;
-//         case '5':
-//             equipWeapon(5);
-//             break;
-//         default:
-//             break;
-//     }
-// });
-
-//     document.onkeyup = function(data){
-//         switch (data.which) {
-//         case '1':
-//             equipWeapon(1);
-//             break;
-//         case '2':
-//             equipWeapon(2);
-//             break;
-//         case '3':
-//             equipWeapon(3);
-//             break;
-//         case '4':
-//             equipWeapon(4);
-//             break;
-//         case '5':
-//             equipWeapon(5);
-//             break;
-//         default:
-//             break;
-//     }
-// }
     </script>
   </body>
 </html>
